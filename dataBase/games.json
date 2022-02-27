@@ -1,0 +1,35 @@
+[
+ {
+  "id": "1",
+  "title": "Prototype",
+  "desc": "You are the Prototype, Alex Mercer, a man without memory armed with amazing shape-shifting abilities, hunting your way to the heart of the conspiracy which created you; making those responsible pay.",
+  "rating": "5.5",
+  "developer": "Ctytek Software",
+  "genre": "Slasher, open world",
+  "url": "https://www.youtube.com/embed/Nc3XptLacMM?controls=0",
+  "photoUrl": "https://upload.wikimedia.org/wikipedia/ru/c/c0/Prototype_Cover_Art.jpeg",
+  "comments:": [
+   {
+    "username": "GoodGuy01",
+    "userRating": "10",
+    "review": "Amazin game 10/10"
+   },
+   {
+    "username": "BruhBruhovski",
+    "userRating": "1",
+    "review": "Bad game"
+   }
+  ]
+ },
+ {
+  "id": "2",
+  "title": "Borderlands 2",
+  "desc": "A new era of shoot and loot is about to begin. Play as one of four new vault hunters facing off against a massive new world of creatures, psychos and the evil mastermind, Handsome Jack. Make new friends, arm them with a bazillion weapons and fight alongside them in 4 player co-op on a relentless quest for revenge and redemption across the undiscovered and unpredictable living planet.",
+  "rating": "Not rated",
+  "developer": "Gearbox software",
+  "genre": "FPS, RPG, open world",
+  "url": "https://www.youtube.com/watch?v=5TW0wJTFLiw",
+  "photoUrl": "https://media.redadn.es/imagenes/borderlands-2_152890.jpg",
+  "comments:": []
+ }
+]

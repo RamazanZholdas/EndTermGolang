@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bagala</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid" style="padding: 0">
+            <div class="row" id="navbar">
+                <div class="col-xl-8 offset-xl-2">
+                    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+                        <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-decoration-none">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="" width="40px" height="40px">
+                        </a>
+
+                        <ul class="nav col-9 col-md-auto mb-2 justify-content-center mb-md-0">
+                            <li>
+                                <a href="#" class="text-decoration-none px-2">Home</a>
+                            </li>
+                            <li>
+                                <a href="#aboutUs" class="text-decoration-none px-2">About us</a>
+                            </li>
+                            <li>
+                                <a href="#contactUs" class="text-decoration-none px-2">Contact us</a>
+                            </li>
+                        </ul>
+                        {{ if .Auth.IsAuth }}
+                            <div class="col-md-3 text-end">
+                                <a href="#" class="btn me-2" id="signIn">{{ .Auth.Username }}</a>
+                                <a href="/logoutPage" class="btn" id="signUp">Logout</a>
+                            </div>
+                        {{ else }}
+                            <div class="col-md-3 text-end">
+                                <a href="/signInPage" class="btn me-2" id="signIn">Login</a>
+                                <a href="/signUpPage" class="btn" id="signUp">Sign-up</a>
+                            </div>
+                        {{ end }}
+                    </header>
+                </div>
+
+            </div>
+            <div class="row align-items-center" id="main">
+                <div class="col-12 text-center">
+                    <h1>Bagala</h1>
+                    <h2>This website provides user's ratings</h2>
+                    <h2>Scroll down to see most popular games</h2>
+                    <br>
+                    <a href="#popular" id="scrollToPopular">Scroll to popular games</a>
+                </div>
+                <svg id="wave" class="align-self-end" style="transform:rotate(0deg); transition: 0.3s;" viewbox="0 0 1440 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+                            <stop stop-color="rgba(102, 104, 112, 1)" offset="0%"></stop>
+                            <stop stop-color="rgba(85, 86, 96, 1)" offset="100%"></stop>
+                        </linearGradient>
+                    </defs>
+                    <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,10L24,21.7C48,33,96,57,144,66.7C192,77,240,73,288,66.7C336,60,384,50,432,45C480,40,528,40,576,43.3C624,47,672,53,720,50C768,47,816,33,864,36.7C912,40,960,60,1008,58.3C1056,57,1104,33,1152,35C1200,37,1248,63,1296,66.7C1344,70,1392,50,1440,48.3C1488,47,1536,63,1584,63.3C1632,63,1680,47,1728,40C1776,33,1824,37,1872,31.7C1920,27,1968,13,2016,10C2064,7,2112,13,2160,13.3C2208,13,2256,7,2304,10C2352,13,2400,27,2448,26.7C2496,27,2544,13,2592,11.7C2640,10,2688,20,2736,25C2784,30,2832,30,2880,28.3C2928,27,2976,23,3024,30C3072,37,3120,53,3168,58.3C3216,63,3264,57,3312,46.7C3360,37,3408,23,3432,16.7L3456,10L3456,100L3432,100C3408,100,3360,100,3312,100C3264,100,3216,100,3168,100C3120,100,3072,100,3024,100C2976,100,2928,100,2880,100C2832,100,2784,100,2736,100C2688,100,2640,100,2592,100C2544,100,2496,100,2448,100C2400,100,2352,100,2304,100C2256,100,2208,100,2160,100C2112,100,2064,100,2016,100C1968,100,1920,100,1872,100C1824,100,1776,100,1728,100C1680,100,1632,100,1584,100C1536,100,1488,100,1440,100C1392,100,1344,100,1296,100C1248,100,1200,100,1152,100C1104,100,1056,100,1008,100C960,100,912,100,864,100C816,100,768,100,720,100C672,100,624,100,576,100C528,100,480,100,432,100C384,100,336,100,288,100C240,100,192,100,144,100C96,100,48,100,24,100L0,100Z"></path>
+                </svg>
+            </div>
+            <div class="row">
+                <svg id="wave" style="transform:rotate(180deg); transition: 0.3s" viewbox="0 0 1440 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+                            <stop stop-color="rgba(102, 104, 112, 1)" offset="0%"></stop>
+                            <stop stop-color="rgba(85, 86, 96, 1)" offset="100%"></stop>
+                        </linearGradient>
+                    </defs>
+                    <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,90L24,90C48,90,96,90,144,85C192,80,240,70,288,58.3C336,47,384,33,432,38.3C480,43,528,67,576,78.3C624,90,672,90,720,78.3C768,67,816,43,864,38.3C912,33,960,47,1008,45C1056,43,1104,27,1152,31.7C1200,37,1248,63,1296,71.7C1344,80,1392,70,1440,61.7C1488,53,1536,47,1584,43.3C1632,40,1680,40,1728,33.3C1776,27,1824,13,1872,21.7C1920,30,1968,60,2016,75C2064,90,2112,90,2160,90C2208,90,2256,90,2304,83.3C2352,77,2400,63,2448,50C2496,37,2544,23,2592,20C2640,17,2688,23,2736,21.7C2784,20,2832,10,2880,16.7C2928,23,2976,47,3024,56.7C3072,67,3120,63,3168,51.7C3216,40,3264,20,3312,20C3360,20,3408,40,3432,50L3456,60L3456,100L3432,100C3408,100,3360,100,3312,100C3264,100,3216,100,3168,100C3120,100,3072,100,3024,100C2976,100,2928,100,2880,100C2832,100,2784,100,2736,100C2688,100,2640,100,2592,100C2544,100,2496,100,2448,100C2400,100,2352,100,2304,100C2256,100,2208,100,2160,100C2112,100,2064,100,2016,100C1968,100,1920,100,1872,100C1824,100,1776,100,1728,100C1680,100,1632,100,1584,100C1536,100,1488,100,1440,100C1392,100,1344,100,1296,100C1248,100,1200,100,1152,100C1104,100,1056,100,1008,100C960,100,912,100,864,100C816,100,768,100,720,100C672,100,624,100,576,100C528,100,480,100,432,100C384,100,336,100,288,100C240,100,192,100,144,100C96,100,48,100,24,100L0,100Z"></path>
+                </svg>
+            </div>
+
+            <div class="row" id="popular">
+                <hr style="width: 20%; height: 3px">
+                <h1>
+                    <b>MOST POPULAR</b>
+                </h1>
+                <div class="row">
+                    <div class="row justify-content-center">
+                        {{ range .Game }}
+                            <div class="col-md-5 col-sm-12">
+                                <div class="card mb-6" style="max-width: 700px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="{{ .PhotoUrl }}" class="img-fluid rounded-start" alt="..." style="max-height: inherit">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ .Title }}</h5>
+                                                <p class="card-text">{{ .Desc }}</p>
+                                                <p class="card-text">Rating:
+                                                    {{ .Rating }}
+                                                </p>
+                                                <a href="/gamePage/{{ .Id }}" class="btn btn-primary">Visit page</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{ else }}
+                            <h2>There is nothing over there</h2>
+                        {{ end }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="aboutUs" style="padding-bottom: 50px">
+                    <hr style="width: 20%; height: 3px; color: #fff; opacity: 100%; margin: 40px">
+                    <div class="col-12">
+                        <h1>
+                            <b>ABOUT US</b>
+                        </h1>
+                        <p>Our website helping to find best games to play. You can rate the game and write review, so other users will get real-player's experience!</p>
+                        <p>Games are adding manually, you may not find your favorite game, but we're working on this</p>
+                    </div>
+
+                </div>
+                <div class="row" id="contactUs">
+                    <div class="col-12">
+                        <hr style="width: 20%; height: 3px; color: #313244; opacity: 100%; margin: 40px">
+                        <h1>
+                            <b>CONTACT US</b>
+                        </h1>
+                    </div>
+
+                    <div class="row mt-5 mb-2 justify-content-center">
+                        <div class="col-md-4 col-xs-12 border-start offset-md-1">
+                            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A19e5ef6bfe765bdc28c297d22daf44cf90435193314e939c0203f3f0378f197f&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                        </div>
+                        <div class="col-md-4 col-xs-12 border-end offset-md-1">
+                            <p>
+                                <b>Our number:
+                                </b>
+                                <a href="tel:7-777-777-77-77" class="text-decoration-none">+7-(777)-777-77-77</a>
+                            </p>
+                            <br>
+                            <p>
+                                <b>Our E-mail:
+                                </b>
+                                <a href="mailto:ramsher@website.com" class="text-decoration-none">ramsher@website.com</a>
+                            </p>
+                            <br>
+                            <p>
+                                <b>Our Address:
+                                </b>Manasa 177</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <footer class="text-center text-lg-start">
+                    <div class="text-center p-3" style="background-color: #313244; color: #fff">
+                        © 2021 Copyright:
+                        <a class="text-light text-decoration-none" href="#">RamaSher</a>
+                    </div>
+                </footer>
+                <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><img src="https://cdn-icons-png.flaticon.com/512/130/130906.png" alt="" width="25px" height="25px"></a>
+            </div>
+            <style>
+                html {
+                    scroll-behavior: smooth;
+                }
+                body {
+                    font-family: 'Lato', sans-serif;
+                }
+                a {
+                    color: #fff;
+                    font-size: 22px;
+                }
+                li a:hover {
+                    padding: 9px;
+                    background-color: #e37628;
+                    border-radius: 20px;
+                    color: white;
+                }
+                li {
+                    margin: 0 10px;
+                }
+
+                #navbar a {
+                    font-size: 22px;
+                }
+                #scrollToPopular {
+                    padding: 10px;
+                    border-radius: 20px;
+                    border: 2px solid #e37628;
+                    text-decoration: none;
+                }
+                #scrollToPopular:hover {
+                    text-decoration: none;
+                    color: white;
+                }
+                #navbar {
+                    background-color: #313244;
+                    color: #fff;
+                }
+                #signIn {
+                    border: 1px solid #e37628;
+                    color: #fff;
+                }
+                #signUp {
+                    background-color: #e37628;
+                    color: #fff;
+                }
+                #main {
+                    color: #fff;
+                    background-color: #313244;
+                    height: 70vh;
+                }
+                .back-to-top {
+                    position: fixed;
+                    bottom: 25px;
+                    right: 25px;
+                    padding: 5px 10px 9px;
+                    background-color: grey;
+                    /*display: none;*/
+                }
+                .back-to-top:hover {
+                    border: 2px solid #e37628;
+                }
+                #popular {
+                    margin: 40px;
+                }
+                #aboutUs {
+                    background-color: #313244;
+                    color: #fff;
+                }
+                #aboutUs h1,
+                p {
+                    margin-left: 40px;
+                }
+                #contactUs h1 {
+                    margin-left: 40px;
+                }
+                #contactUs p {
+                    font-size: 28px;
+                    color: #000;
+                }
+                #contactUs a {
+                    font-size: 28px;
+                    color: #000;
+                }
+                #contactUs a:hover {
+                    color: #e37628;
+                }
+                #contactUs {
+                    margin: 30px 0;
+                }
+                #aboutUs p {
+                    font-size: 22px;
+                }
+            </style>
+        </body>
+    </body>
+</html>

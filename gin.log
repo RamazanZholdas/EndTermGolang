@@ -1,0 +1,115 @@
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (6): 
+	- 
+	- adminPanel.html
+	- gamePage.html
+	- index.html
+	- signIn.html
+	- signUp.html
+
+[GIN-debug] GET    /mainPage                 --> main.mainPage (3 handlers)
+[GIN-debug] GET    /signUpPage               --> main.signUpPage (3 handlers)
+[GIN-debug] POST   /signUpPageAuth           --> main.signUpPageAuth (3 handlers)
+[GIN-debug] GET    /signInPage               --> main.signInPage (3 handlers)
+[GIN-debug] POST   /signInPageAuth           --> main.signInPageAuth (3 handlers)
+[GIN-debug] GET    /gamePage/:id             --> main.gamePage (3 handlers)
+[GIN-debug] POST   /gamePage/:id/postComment --> main.gamePageWithComment (3 handlers)
+[GIN-debug] GET    /logoutPage               --> main.logoutPage (3 handlers)
+[GIN-debug] GET    /adminPanel               --> main.adminPanel (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: GET
+Path: "/mainPage"
+Latency: 2.771867ms
+Exact time: Saturday, 25-Dec-21 11:58:11 +06
+
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: GET
+Path: "/signUpPage"
+Latency: 1.350381ms
+Exact time: Saturday, 25-Dec-21 11:58:22 +06
+
+Status code: 303
+Clients ip address: 127.0.0.1
+Method: POST
+Path: "/signUpPageAuth"
+Latency: 1.930183ms
+Exact time: Saturday, 25-Dec-21 11:58:47 +06
+
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: POST
+Path: "/signUpPageAuth"
+Latency: 151.886642ms
+Exact time: Saturday, 25-Dec-21 11:59:10 +06
+
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: GET
+Path: "/gamePage/1"
+Latency: 2.046943ms
+Exact time: Saturday, 25-Dec-21 11:59:15 +06
+
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: POST
+Path: "/gamePage/1/postComment"
+Latency: 5.74318ms
+Exact time: Saturday, 25-Dec-21 11:59:34 +06
+
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: GET
+Path: "/logoutPage"
+Latency: 2.073442ms
+Exact time: Saturday, 25-Dec-21 11:59:40 +06
+
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: GET
+Path: "/gamePage/1"
+Latency: 2.126613ms
+Exact time: Saturday, 25-Dec-21 11:59:43 +06
+
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: GET
+Path: "/gamePage/1"
+Latency: 2.299137ms
+Exact time: Saturday, 25-Dec-21 11:59:53 +06
+
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: GET
+Path: "/signInPage"
+Latency: 1.105541ms
+Exact time: Saturday, 25-Dec-21 11:59:55 +06
+
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: POST
+Path: "/signInPageAuth"
+Latency: 146.588639ms
+Exact time: Saturday, 25-Dec-21 12:00:05 +06
+
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: GET
+Path: "/gamePage/1"
+Latency: 2.721252ms
+Exact time: Saturday, 25-Dec-21 12:00:07 +06
+
+Status code: 200
+Clients ip address: 127.0.0.1
+Method: POST
+Path: "/gamePage/1/postComment"
+Latency: 2.562263ms
+Exact time: Saturday, 25-Dec-21 12:00:14 +06
+

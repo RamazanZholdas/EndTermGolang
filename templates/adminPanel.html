@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel</title>
+</head>
+<body>
+    <h2>Admin panel</h2>
+
+    <h3>Users:</h3>
+    <p>
+      {{ range .Users}}
+        Username: {{ .Username }}
+        <br>
+        Email: {{ .Email }}
+        <br> <br>
+      {{end}}
+    </p>
+    <h3>Games:</h3>
+    <p>
+      {{ range .Games }}
+        Title: {{ .Title }}
+        <br>
+        Description: {{ .Desc }}
+        <br>
+        Developers: {{ .Developer }}
+        <br>
+        Rating: {{ .Rating }}
+        <br>
+        Genre: {{ .Genre }}
+        <br>
+        Reviews: <br>
+        {{ range .Comments }}
+          Review author: {{ .Username }} <br>
+          His rate: {{ .UserRating }} <br>
+          Review: {{ .Review }}
+        {{end}}
+        <br>
+      {{ end }}
+    </p>
+
+</body>
+</html>
